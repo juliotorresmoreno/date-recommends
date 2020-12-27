@@ -1,6 +1,9 @@
-from flask import Flask
-app = Flask(__name__)
+import sys
+sys.path.append(".")
+from boot.started import configure
+from routes import index
+from app import *
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+configure()
+
+index.configure()
